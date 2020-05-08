@@ -12,6 +12,7 @@ public class ListStudents extends JFrame {
 
     public ListStudents()
     {
+        ClientHandler ch = null;
         label=new JLabel("List students");
         label.setLocation(100,150);
         label.setSize(300,30);
@@ -19,6 +20,7 @@ public class ListStudents extends JFrame {
         setLayout(null);
         setSize(500,500);
         JTextArea txt=new JTextArea();
+        st=ch.getStudents();
         for(int i = 0 ;i<st.size();i++)
         {
             txt.append(st.toString());

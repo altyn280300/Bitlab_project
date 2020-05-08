@@ -1,11 +1,12 @@
 package com.company;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class ListStudents extends JFrame {
+public class ListStudents extends Container {
     private JLabel label;
     private JButton btn;
     private ArrayList<Student>st;

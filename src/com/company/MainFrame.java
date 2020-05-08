@@ -17,6 +17,8 @@ public class MainFrame extends JFrame {
         menu = new Menu();
         menu.setLocation(0, 0);
         menu.setVisible(true);
+        add(menu);
+
 
         addStudent = new AddStudent();
         addStudent.setLocation(0, 0);

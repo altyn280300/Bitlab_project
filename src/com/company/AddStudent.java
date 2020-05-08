@@ -5,13 +5,13 @@ import java.awt.event.*;
 import java.util.Scanner;
 import javax.swing.*;
 
-public class AddStudent extends JFrame {
+public class AddStudent extends Container {
     private static JButton btn;
 
 
    Scanner in = new Scanner(System.in);
     public AddStudent(){
-        Student st =null;
+        Student st =new Student();
         setLayout(null);
         setSize(500,500);
 

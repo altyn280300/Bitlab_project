@@ -21,7 +21,7 @@ public class ClientHandler extends Thread {
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
             PackageData pd ;
             while ((pd = (PackageData) inStream.readObject()) != null) {
-                if (pd.getOperationType().equals("ADD ")) {
+                if (pd.getOperationType().equals("ADD")) {
                     System.out.println(pd.getStudent().toString());
                     addStudentToDataBase(pd.getStudent());
                 } else if (pd.getOperationType().equals("LISt")) {

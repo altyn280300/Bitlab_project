@@ -12,6 +12,9 @@ public class ListStudents extends JFrame {
 
     public ListStudents()
     {
+        label=new JLabel("List students");
+        label.setLocation(100,150);
+        label.setSize(300,30);
 
         setLayout(null);
         setSize(500,500);
@@ -25,7 +28,7 @@ public class ListStudents extends JFrame {
 
 
         btn = new JButton("Back");
-        btn.setLocation(100,150);
+        btn.setLocation(100,450);
         btn.setSize(300,30);
         btn.addActionListener(new ActionListener() {
             @Override

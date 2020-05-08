@@ -8,26 +8,34 @@ public class mainFrame extends JFrame {
     public static ListStudents listStudents;
     public static Menu menu;
 
-    public mainFrame(){
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
+    public mainFrame() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Student application");
-        setSize(500,500);
+        setSize(500, 500);
         setLayout(null);
 
-        menu=new Menu();
-        menu.setLocation(0,0);
+        menu = new Menu();
+        menu.setLocation(0, 0);
         menu.setVisible(true);
         add(menu);
 
-        addStudent=new AddStudent();
-        addStudent.setLocation(0,0);
+        addStudent = new AddStudent();
+        addStudent.setLocation(0, 0);
         addStudent.setVisible(false);
         add(addStudent);
 
-        listStudents=new ListStudents();
-        listStudents.setLocation(0,0);
+        listStudents = new ListStudents();
+        listStudents.setLocation(0, 0);
         listStudents.setVisible(false);
         add(listStudents);
+
+    }
+        public static void  showThirdPage()
+        {
+            menu.setVisible(false);
+            addStudent.setVisible(false);
+            listStudents.setVisible(true);
+        }
 
 
 
@@ -36,4 +44,4 @@ public class mainFrame extends JFrame {
 
 
 
-}
+

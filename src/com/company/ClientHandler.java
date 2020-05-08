@@ -25,7 +25,9 @@ public class ClientHandler extends Thread {
                     System.out.println(pd.getStudent().toString());
                     addStudentToDataBase(pd.getStudent());
                 } else if (pd.getOperationType().equals("LISt")) {
-                    System.out.println(getStudents());
+
+                    Main.frame.showThirdPage();
+
 
                 }
 

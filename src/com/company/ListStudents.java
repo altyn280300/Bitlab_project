@@ -37,6 +37,7 @@ public class ListStudents extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 Main.frame.listStudents.setVisible(false);
                 Main.frame.menu.setVisible(true);
+                Main.frame.repaint();
             }
         });
 

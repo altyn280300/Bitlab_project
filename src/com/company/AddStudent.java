@@ -23,6 +23,7 @@ public class AddStudent extends JFrame {
        JTextField txt=new JTextField();
         txt.setLocation(200,100);
         txt.setSize(300,30);
+        add(txt);
 
        JLabel label2 =new JLabel("Surname: ");
         label2.setLocation(100,140);
@@ -42,6 +43,7 @@ public class AddStudent extends JFrame {
         JTextField txt3=new JTextField();
         txt3.setSize(300,30);
         txt3.setLocation(200,180);
+        add(txt3);
 
 
 
@@ -54,6 +56,7 @@ public class AddStudent extends JFrame {
 
                 Main.frame.addStudent.setVisible(false);
                 Main.frame.menu.setVisible(true);
+                Main.frame.repaint();
 
             }
         });
@@ -65,11 +68,14 @@ public class AddStudent extends JFrame {
         btn.setSize(50,30);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                String name =in.next();
-                Long  id=in.nextLong();
-                String surname=in.next();
-                int age=in.nextInt();
-                st.setId(id);
+                String name =txt.getText();
+                String surname=txt2.getText();
+                int age;
+
+                age=Integer.parseInt(txt3.getText());
+
+
+
                 st.setName(name);
                 st.setSurname(surname);
                 st.setAge(age);
@@ -77,6 +83,7 @@ public class AddStudent extends JFrame {
                 Main.addStudent(st);
                 Main.frame.addStudent.setVisible(false);
                 Main.frame.menu.setVisible(true);
+                Main.frame.repaint();
                 Main.frame.repaint();
 
             }

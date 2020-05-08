@@ -56,7 +56,6 @@ public class AddStudent extends JFrame {
 
                 Main.frame.addStudent.setVisible(false);
                 Main.frame.menu.setVisible(true);
-                Main.frame.repaint();
 
             }
         });
@@ -83,8 +82,7 @@ public class AddStudent extends JFrame {
                 Main.addStudent(st);
                 Main.frame.addStudent.setVisible(false);
                 Main.frame.menu.setVisible(true);
-                Main.frame.repaint();
-                Main.frame.repaint();
+
 
             }
         });

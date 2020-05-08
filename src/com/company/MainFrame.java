@@ -27,7 +27,6 @@ public class MainFrame extends JFrame {
         listStudents.setLocation(0, 0);
         listStudents.setVisible(false);
         add(listStudents);
-        repaint();
 
     }
         public static void  showThirdPage()

@@ -23,10 +23,14 @@ public class MainFrame extends JFrame {
         addStudent.setVisible(false);
         add(addStudent);
 
+
+
         listStudents = new ListStudents();
         listStudents.setLocation(0, 0);
         listStudents.setVisible(false);
         add(listStudents);
+
+
 
     }
         public static void  showThirdPage()

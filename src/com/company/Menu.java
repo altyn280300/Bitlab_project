@@ -20,7 +20,7 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 Main.frame.menu.setVisible(false);
                 Main.frame.addStudent.setVisible(true);
-                Main.frame.repaint();
+
 
             }
         });

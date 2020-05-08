@@ -50,7 +50,7 @@ public class AddStudent extends JFrame {
 
          btn = new JButton("Back");
         btn.setLocation(100,400);
-        btn.setSize(50,30);
+        btn.setSize(100,30);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
 
@@ -63,8 +63,8 @@ public class AddStudent extends JFrame {
 
 
         btn = new JButton("Add");
-        btn.setLocation(160,400);
-        btn.setSize(50,30);
+        btn.setLocation(230,400);
+        btn.setSize(100,30);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 String name =txt.getText();

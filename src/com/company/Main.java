@@ -11,16 +11,16 @@ public class Main {
     public static ArrayList<Student>students;
 
     public static void main(String[] args) {
-        frame = new MainFrame();
-        frame.setVisible(true);
-
-        Scanner sc = new Scanner(System.in);
         try {
-            socket = new Socket("127.0.0.1", 2020);
+            socket = new Socket("localhost", 2020);
             outStream = new ObjectOutputStream(socket.getOutputStream());
         } catch (Exception e) {
             e.printStackTrace();
         }
+        frame = new MainFrame();
+        frame.setVisible(true);
+
+        Scanner sc = new Scanner(System.in);
 
 //
     }

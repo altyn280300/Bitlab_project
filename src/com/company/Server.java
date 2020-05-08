@@ -10,6 +10,7 @@ public class Server {
                 ServerSocket server = new ServerSocket(2020);
                 System.out.println("Waiting for client...");
                 while(true){
+
                     Socket socket = server.accept();
                     System.out.println("Client connected");
                     ClientHandler ch = new ClientHandler(socket);

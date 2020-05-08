@@ -3,12 +3,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class mainFrame extends JFrame {
+public class MainFrame extends JFrame {
     public static AddStudent addStudent;
     public static ListStudents listStudents;
     public static Menu menu;
 
-    public mainFrame() {
+    public MainFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Student application");
         setSize(500, 500);

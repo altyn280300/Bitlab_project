@@ -6,11 +6,11 @@ import java.net.Socket;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class Clienthandler extends Thread {
+public class ClientHandler extends Thread {
     private Socket socket;
     private static Connection connection;
 
-    public Clienthandler(Socket socket) {
+    public ClientHandler(Socket socket) {
         this.socket = socket;
     }
 
@@ -19,7 +19,7 @@ public class Clienthandler extends Thread {
             ObjectInputStream inStream = new ObjectInputStream(socket.getInputStream());
 
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
-            PackageData pd = null;
+            PackageData pd ;
             while ((pd = (PackageData) inStream.readObject()) != null) {
                 if (pd.getOperationType().equals("ADD ")) {
                     System.out.println(pd.getStudent().toString());

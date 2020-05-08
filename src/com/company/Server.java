@@ -20,12 +20,11 @@ public class Server {
             while(true) {
                 Socket socket = server.accept();
                 System.out.println("Client connected");
-                Clienthandler ch=new Clienthandler(socket);
+                ClientHandler ch=new ClientHandler(socket);
                 ch.start();
             }
-
-
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
 

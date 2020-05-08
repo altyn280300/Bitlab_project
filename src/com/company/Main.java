@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            socket = new Socket("localhost", 2020);
+            socket = new Socket("localhost", 1998);
             outStream = new ObjectOutputStream(socket.getOutputStream());
         } catch (Exception e) {
             e.printStackTrace();

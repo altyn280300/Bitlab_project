@@ -7,7 +7,7 @@ public class Server {
 
         public static void main(String[] args) {
             try{
-                ServerSocket server = new ServerSocket(2020);
+                ServerSocket server = new ServerSocket(1998);
                 System.out.println("Waiting for client...");
                 while(true){
 

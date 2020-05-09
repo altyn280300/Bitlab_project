@@ -11,9 +11,9 @@ public class AddStudent extends Container {
 
    Scanner in = new Scanner(System.in);
     public AddStudent(){
-        Student st =new Student();
+
         setLayout(null);
-        setSize(500,500);
+        setSize(700,700);
 
        JLabel label = new JLabel("Name:");
         label.setLocation(100,100);
@@ -67,6 +67,7 @@ public class AddStudent extends Container {
         btn.setSize(100,30);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                Student st=new Student();
                 String name =txt.getText();
                 String surname=txt2.getText();
                 int age;

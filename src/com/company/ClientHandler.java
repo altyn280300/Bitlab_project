@@ -10,12 +10,14 @@ public class ClientHandler extends Thread {
     private Socket socket;
     private static Connection connection;
 
+
     public ClientHandler(Socket socket) {
         this.socket = socket;
     }
 
     public void run() {
         try {
+            connectDatabase();
             ObjectInputStream inStream = new ObjectInputStream(socket.getInputStream());
 
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
@@ -25,8 +27,16 @@ public class ClientHandler extends Thread {
                     System.out.println(pd.getStudent().toString());
                     addStudentToDataBase(pd.getStudent());
                 } else if (pd.getOperationType().equals("LISt")) {
+                    pd.setStudentList(getStudents());
+                    try{
+                        outputStream.writeObject(pd);
+                    }
+                    catch(Exception e)
+                    {
+                        e.printStackTrace();
+                    }
 
-                    Main.frame.showThirdPage();
+
 
 
                 }
@@ -40,8 +50,8 @@ public class ClientHandler extends Thread {
     public void connectDatabase()
     {
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/bitlab_project?useUnicode=true&serverTimezone=UTC","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bitlab_project?useUnicode=true&serverTimezone=UTC","root","");
 
         }
         catch (Exception e)
@@ -57,12 +67,11 @@ public class ClientHandler extends Thread {
             Statement st = connection.createStatement();
             //String sql = "insert into student(name,surname,age) values(\"" + student.getName() + "\",\"" + student.getSurname() + "\",\"" + student.getAge() + "\")";
             PreparedStatement statement=connection.prepareStatement(""+
-                    "INSERT INTO students(id,name,price)"+"VALUES(NULL,?,?,?)");
+                    "INSERT INTO students(id,name,surname,age)"+"VALUES(NULL,?,?,?)");
             statement.setString(1,student.getName());
             statement.setString(2,student.getSurname());
             statement.setInt(3,student.getAge());
             int row=statement.executeUpdate();
-            statement.executeUpdate();
             statement.close();
 
         } catch (Exception e) {

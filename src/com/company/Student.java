@@ -1,6 +1,8 @@
 package com.company;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private Long id;
     private String name;
     private String surname;

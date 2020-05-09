@@ -10,7 +10,7 @@ public class Menu extends Container {
     public JButton add;
     public JButton list;
     public Menu(){
-        setSize(500,500);
+        setSize(700,700);
         setLayout(null);
 
         add=new JButton("ADD");
@@ -33,13 +33,16 @@ public class Menu extends Container {
         list.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                Main.getList();//лист всех данных студентов
+                Main.frame.listFrame.updateList();
                 Main.frame.menu.setVisible(false);
-                Main.frame.listStudents.setVisible(true);
+                Main.frame.listFrame.setVisible(true);
 
             }
         });
         add(list);
 
     }
+
 
 }

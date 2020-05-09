@@ -1,11 +1,9 @@
 package com.company;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 
 public class MainFrame extends JFrame {
     public static AddStudent addStudent;
-    public static ListStudents listStudents;
+    public static ListFrameStudents listFrame;
     public static Menu menu;
 
     public MainFrame() {
@@ -27,24 +25,13 @@ public class MainFrame extends JFrame {
 
 
 
-        listStudents = new ListStudents();
-        listStudents.setLocation(0, 0);
-        listStudents.setVisible(false);
-        add(listStudents);
-
-
+        listFrame = new ListFrameStudents();
+        listFrame.setLocation(0, 0);
+        listFrame.setVisible(false);
+        add(listFrame);
 
     }
-        public static void  showThirdPage()
-        {
-            menu.setVisible(false);
-            addStudent.setVisible(false);
-            listStudents.setVisible(true);
-        }
-
-
-
-    }
+}
 
 
 

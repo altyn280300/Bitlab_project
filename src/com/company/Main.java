@@ -7,6 +7,7 @@ public class Main {
     public static MainFrame frame;
     public static Socket socket;
     public static ObjectOutputStream outStream;
+    public static ObjectInputStream inputStream;
     public static Student st;
     public static ArrayList<Student>students;
 
@@ -14,6 +15,7 @@ public class Main {
         try {
             socket = new Socket("localhost", 1998);
             outStream = new ObjectOutputStream(socket.getOutputStream());
+            inputStream=new ObjectInputStream(socket.getInputStream());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -30,12 +32,26 @@ public class Main {
         PackageData pd = new PackageData();
         pd.setOperationType("ADD");
         pd.setStudent(st);
-        students.add(st);
-        pd.setStudentList(students);
+
 
         try {
             outStream.writeObject(pd);
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    public static  void getList()
+    {
+        PackageData pd=new PackageData();
+        pd.setOperationType("LIST");
+        try {
+            outStream.writeObject(pd);
+            inputStream.readObject();
+            students=pd.getStudentList();
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
 

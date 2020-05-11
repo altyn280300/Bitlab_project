@@ -8,7 +8,7 @@ public class Main {
     public static Socket socket;
     public static ObjectOutputStream outStream;
     public static ObjectInputStream inputStream;
-    public static Student st;
+
     public static ArrayList<Student>students;
 
     public static void main(String[] args) {
@@ -22,9 +22,7 @@ public class Main {
         frame = new MainFrame();
         frame.setVisible(true);
 
-        Scanner sc = new Scanner(System.in);
-
-//
+        //
     }
 
     public static void addStudent(Student st) {

@@ -7,9 +7,9 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class ListFrameStudents extends Container {
-    private  static JLabel label;
-    private static  JButton btn;
-    private static JTextArea txt;
+    private  JLabel label;
+    private  JButton btn;
+    public  JTextArea txt;
     private static ArrayList<Student>st;//он ниодин и тот же студент который в main
 
     public ListFrameStudents()
@@ -22,9 +22,13 @@ public class ListFrameStudents extends Container {
 
             setLayout(null);
             setSize(700, 700);
-            txt = new JTextArea();
+
+            txt= new JTextArea();
+
 
             add(txt);
+
+
         }catch(Exception e)
         {
             e.printStackTrace();
@@ -46,16 +50,14 @@ public class ListFrameStudents extends Container {
 
 
     }
-    public static void updateList()
+    public  void updateList()
     {
         st=Main.students;
-        for (int i = 0; i < st.size(); i++) {
+        for (int i = 0; i < st.size(); i++)
+        {
             txt.append(st.get(i).toString());
         }
 
     }
-
-
-
 
 }

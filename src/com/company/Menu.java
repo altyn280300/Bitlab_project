@@ -33,9 +33,9 @@ public class Menu extends Container {
         list.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                Main.frame.menu.setVisible(false);
                 Main.getList();//лист всех данных студентов
                 Main.frame.listFrame.updateList();
-                Main.frame.menu.setVisible(false);
                 Main.frame.listFrame.setVisible(true);
 
             }

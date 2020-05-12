@@ -1,19 +1,15 @@
 package com.company;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.util.Scanner;
-import javax.swing.*;
 
 public class AddStudent extends Container {
-    private static JButton btn;
 
 
-   Scanner in = new Scanner(System.in);
     public AddStudent(){
 
         setLayout(null);
-        setSize(700,700);
+        setSize(500,500);
 
        JLabel label = new JLabel("Name:");
         label.setLocation(100,100);
@@ -46,18 +42,14 @@ public class AddStudent extends Container {
         add(txt3);
 
 
-
-
-         btn = new JButton("Back");
+        JButton btn = new JButton("Back");
         btn.setLocation(100,400);
         btn.setSize(100,30);
-        btn.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+        btn.addActionListener(e -> {
 
-                Main.frame.addStudent.setVisible(false);
-                Main.frame.menu.setVisible(true);
+            MainFrame.addStudent.setVisible(false);
+            MainFrame.menu.setVisible(true);
 
-            }
         });
         add(btn);
 
@@ -65,27 +57,25 @@ public class AddStudent extends Container {
         btn = new JButton("Add");
         btn.setLocation(230,400);
         btn.setSize(100,30);
-        btn.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                Student st=new Student();
-                String name =txt.getText();
-                String surname=txt2.getText();
-                int age;
+        btn.addActionListener(e -> {
+            Student st=new Student();
+            String name =txt.getText();
+            String surname=txt2.getText();
+            int age;
 
-                age=Integer.parseInt(txt3.getText());
-
+            age=Integer.parseInt(txt3.getText());
 
 
-                st.setName(name);
-                st.setSurname(surname);
-                st.setAge(age);
 
-                Main.addStudent(st);
-                Main.frame.addStudent.setVisible(false);
-                Main.frame.menu.setVisible(true);
+            st.setName(name);
+            st.setSurname(surname);
+            st.setAge(age);
+
+            Main.addStudent(st);
+            MainFrame.addStudent.setVisible(false);
+            MainFrame.menu.setVisible(true);
 
 
-            }
         });
         add(btn);
     }
